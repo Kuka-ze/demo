@@ -6,20 +6,67 @@
     <title>Document</title>
 </head>
 <style>
-    div{
+    /* div{
         width: 0;
     height: 0;
     border: 23px #f00 solid;
     border-top: transparent 20px solid;
     border-left: transparent 20px solid;
     border-right: transparent 20px solid;
+} */
+
+.class{
+    background: #f00 !important;
 }
+#idcss{
+    background: #ff0 !important;
+}
+
+
+
 </style>
 <body>
     <P>你好 世界</P>
+    <div class="class" id="idcss" style="background:#00f">选择器测试</div>
     <div></div>
 </body>
 <script>
-    console.log("hello world")
-</script>
+    /* 判断一个字符串中出现最多的字符和出现的次数 */
+
+    var str = 'abbccddd';
+    var obj = {}; /* 定义一个空的对象来接收结果 */
+    for (var i = 0; i < str.length; i++) {
+      /* charAt获取字符串的索引 */
+      /* 判断obj是否存在一个为 obj[str.charAt(i)] 的键；
+　　　　　　如果不存在，那么就添加这个键，并且赋值为1；
+　　　　　　如果已经存在这个键，那么就给这个键的值加1 */
+      if (!obj[str.charAt(i)]) {
+        obj[str.charAt(i)] = 1;
+      } else {
+        obj[str.charAt(i)]++;
+      }
+    }
+    console.log(obj);
+    
+    /* 假设一个为0的值 和 一个空的字符串来存放键；
+　　for in 遍历obj对象 然后把每一个值和max对比；
+　　然后获取最大的值max 和 最大值对应的键maxno */
+    var max = 0;
+    var maxno = '';
+    for (var k in obj) {
+      if (obj[k] > max) {
+        max = obj[k];
+        maxno = k;
+      }
+    }
+    console.log(max + ' ' + maxno);
+
+    //数组去重的方法
+    var arr = [1,2,2,4,3,4,1,3,2,7,5,6,1]
+    var newArr = new Set(arr)
+    
+
+
+  </script>
+
 </html>
